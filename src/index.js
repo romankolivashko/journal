@@ -11,8 +11,10 @@ $(document).ready(function() {
     const body = $("input#entry").val();
     let journalEntry = new Entry(title, body);
     const counted = journalEntry.wordCount(body);
+    const vCounted = journalEntry.vowelCount(body);
     $("#word-count").html(counted); 
     $("#journalTitle").html(title);
+    $("#vCount").html(vCounted); 
   });
 });
 

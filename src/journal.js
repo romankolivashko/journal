@@ -5,7 +5,6 @@ export function Entry(title, body) {
 
 function noInputtedWord() {
   for (let i = 0; i < arguments.length; i++) {
-    console.log(arguments[i]);
     if (arguments[i].trim().length === 0) {
       return true;
     }
@@ -27,12 +26,13 @@ Entry.prototype.wordCount = function (text) {
   return wordCount;
 };
 
-// WIP
-// Entry.prototype.vowelCount = function (text) {
-//   let vowelCount = 0;
-//   let vowelArray = text.split('');
-//   const vowels = ["a", "i", "o", "u", "e"];
-//   for (let i = 0; i < vowels.length; i += 1) {
-//     if (vowels[i] === vowelArray[])
-//   }
-// }
+Entry.prototype.vowelCount = function (text) {
+  let vowelCount = 0;
+  const vowels = "aeiouAEIOU";
+  for (let i = 0; i < text.length; i ++) {
+    if (vowels.indexOf(text[i]) !== -1) {
+      vowelCount += 1;
+    }
+  }
+  return vowelCount;
+};
